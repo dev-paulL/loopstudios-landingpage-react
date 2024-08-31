@@ -9,7 +9,7 @@ export default function InteractiveSection() {
         <source srcSet={DesktopInteractive} media="(min-width:1020px)" />
         <img src={MobileInteractive} alt="" className="w-full" />
       </picture>
-      <motion.article
+      <motion.div
         initial={{ opacity: 0.1, y: 50 }} 
         whileInView={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8, ease: "easeOut" }} 
@@ -21,7 +21,7 @@ export default function InteractiveSection() {
           Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our
           award-winning creations have transformed businesses through digital experiences that bind to their brand.
         </p>
-      </motion.article>
+      </motion.div>
     </section>
   );
 }

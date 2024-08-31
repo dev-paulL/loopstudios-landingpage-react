@@ -1,3 +1,5 @@
+import UnderlineHover from "./UnderlineHover";
+
 export default function NavLinkItem({ link }: { link: string }) {
   return (
     <li className="relative">
@@ -6,7 +8,7 @@ export default function NavLinkItem({ link }: { link: string }) {
         className="relative group text-white py-2 !bg-transparent" 
       >
         {link}
-        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-[50%] h-[2px] bg-white transition-all duration-300"></span>
+        <UnderlineHover />
       </a>
     </li>
   );

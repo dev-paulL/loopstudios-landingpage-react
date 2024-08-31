@@ -1,5 +1,6 @@
 import { logo, navLinks, socialLinks } from "../data";
 import NavLinkItem from "./NavLinkItem";
+import UnderlineHover from "./UnderlineHover";
 
 export default function FooterSection() {
   return (
@@ -18,13 +19,13 @@ export default function FooterSection() {
         </div>
 
         <div className="flex flex-col lg:items-end items-center justify-items-center gap-6 mt-8 lg:mt-0">
-          <ul aria-description="Social links" className="flex gap-6 items-center">
+          <ul className="flex gap-6 items-center">
             {socialLinks.map((socialLink) => {
               return (
                 <li key={`f_${socialLink.name}`} className="relative">
                   <a href={socialLink.href} className="relative group flex items-center justify-center">
                     <img src={socialLink.icon} alt={socialLink.name} className="w-6 h-6" />
-                    <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-[100%] h-[2px] bg-white transition-all duration-300"></span>
+                    <UnderlineHover socials={true} />
                   </a>
                 </li>
               );
