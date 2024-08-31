@@ -6,12 +6,11 @@
 @tailwind utilities;
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  @apply box-border p-0 m-0;
 }
 
 .hero {
+  @apply bg-cover bg-center;
   background-image: url(./assets/images/mobile/image-hero.jpg);
 }
 
@@ -25,74 +24,46 @@ p {
 }
 
 .no-scroll {
-  overflow: hidden;
+  @apply overflow-hidden;
 }
 img {
-  max-width: 100%;
+  @apply max-w-full;
 }
 
-.desktop-nav {
-  display: none;
-}
-.mobile-hamburger {
-  display: block;
+.vignette-wrapper {
+  @apply relative cursor-pointer;
 }
 
-.mobile-seeAllBtn {
-  display: block;
+.vignette-wrapper::before {
+  @apply absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-30 transition-all duration-150 ease-in-out z-10;
+  content: "";
 }
 
-.desktop-seeAllBtn {
-  display: none;
+.vignette-wrapper img {
+  @apply block w-full h-auto relative;
+  z-index: 0;
 }
-/* Above 1024px */
+
+/* Group hover effect targeting the article element */
+.creationsSection article:hover .vignette-wrapper::before,
+.group:hover .vignette-wrapper::before {
+  @apply bg-white bg-opacity-70;
+}
+
+/* Adjust opacity and other effects when hovering the article */
+.creationsSection article:hover,
+.group:hover {
+  @apply bg-black bg-opacity-20 transition-all duration-150 ease-in-out;
+}
+
+/* Ensure text color changes when hovering the article */
+.creationsSection .group:hover a {
+  @apply text-black transition-colors duration-150 ease-in-out;
+}
+
+/* Above 1020px */
 @media (min-width: 1020px) {
-  .desktop-nav {
-    display: block;
-  }
-  .mobile-hamburger {
-    display: none;
-  }
-
-  .mobile-seeAllBtn {
-    display: none;
-  }
-
-  .desktop-seeAllBtn {
-    display: block;
-  }
-
   .hero {
     background-image: url(./assets/images/desktop/image-hero.jpg);
   }
 }
-/* styles.css or similar */
-.vignette-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-
-.vignette-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 10; /* Ensure vignette is above the image but below the text */
-  transition: all 0.15s ease;
-}
-
-.vignette-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 0; /* Ensure image is below the vignette */
-}
-
-.vignette-wrapper:hover::before {
-  background: rgba(255, 255, 255, 0.7);
-}
-
