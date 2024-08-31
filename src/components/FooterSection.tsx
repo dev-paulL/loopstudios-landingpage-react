@@ -18,7 +18,7 @@ export default function FooterSection() {
         </div>
 
         <div className="flex flex-col lg:items-end items-center justify-items-center gap-6 mt-8 lg:mt-0">
-          <ul aria-label="Social links" className="flex gap-6 items-center">
+          <ul aria-description="Social links" className="flex gap-6 items-center">
             {socialLinks.map((socialLink) => {
               return (
                 <li key={`f_${socialLink.name}`} className="relative">

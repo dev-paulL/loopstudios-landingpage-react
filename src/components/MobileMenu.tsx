@@ -1,5 +1,4 @@
 import { closeIcon, logo, navLinks } from "../data";
-import NavLinkItem from "./NavLinkItem";
 import { motion } from "framer-motion";
 
 export default function MobileMenu({ toggleMenu }: { toggleMenu: () => void }) {
@@ -44,7 +43,7 @@ export default function MobileMenu({ toggleMenu }: { toggleMenu: () => void }) {
           {navLinks.map((nL) => {
             return (
               <motion.li key={`h_${nL}`} variants={itemVariants}>
-                <NavLinkItem link={nL} />
+                {nL}
               </motion.li>
             );
           })}

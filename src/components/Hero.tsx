@@ -5,16 +5,14 @@ export default function Hero() {
   return (
     <section className="relative z-0 hero min-h-[80vh] bg-center bg-cover bg-no-repeat flex items-center justify-center p-8">
       <div className="max-w-[1200px] w-full">
-        <h1 className="heroText text-white uppercase border-2 border-white text-[2rem] p-6 w-full md:text-6xl max-w-max font-light mx-auto lg:mx-0 lg:text-7xl md:p-12 lg:tracking-widest">
-          <motion.div
-            initial="hidden"
+        <motion.h1 initial="hidden"
             animate="visible"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1 },
             }}
-            transition={{ staggerChildren: 0.1 }}
-          >
+            transition={{ staggerChildren: 0.1 }} className="heroText text-white uppercase border-2 border-white text-[2rem] p-6 w-full md:text-6xl max-w-max font-light mx-auto lg:mx-0 lg:text-7xl md:p-12 lg:tracking-widest">
+          
             {heroTextContent.map((heroText, index) => {
               const classes = `${heroText === "That" || heroText === "Deliver" ? "block lg:inline-block lg:mr-4" : "block"}`;
 
@@ -32,8 +30,8 @@ export default function Hero() {
                 </motion.span>
               );
             })}
-          </motion.div>
-        </h1>
+          
+        </motion.h1>
       </div>
     </section>
   );

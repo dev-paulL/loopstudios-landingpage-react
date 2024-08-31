@@ -18,7 +18,7 @@ export default function CreationsSection() {
       </div>
       <div className="flex flex-col gap-8 mt-10 lg:grid lg:grid-cols-4 lg:grid-rows-2 items-center">
         {creations.map((creation) => {
-          let titleWidth = creation.name === "The Grid" || creation.name === "Deep Earth" ? "5rem" : "10rem"; 
+          let titleWidth = creation.name === "The Grid" || creation.name === "Deep Earth" ? "5rem" : "10rem";
 
           return (
             <motion.article
@@ -34,12 +34,14 @@ export default function CreationsSection() {
                 <source srcSet={creation.imgDesktop} media="(min-width:1024px)" />
                 <img src={creation.imgMobile} alt={creation.name} className="" />
               </picture>
-              <a
-                className={`cursor-pointer absolute left-4 bottom-4 lg:left-[2rem] lg:bottom-[2rem] uppercase font-josefin text-2xl md:text-3xl font-light leading-tight z-30 group-hover:text-black transition-colors duration-150`}
-               style={{ width: titleWidth }} 
-              >
-                {creation.name}
-              </a>
+              <h3>
+                <a
+                  className={`cursor-pointer absolute left-4 bottom-4 lg:left-[2rem] lg:bottom-[2rem] uppercase font-josefin text-2xl md:text-3xl font-light leading-tight z-30 group-hover:text-black transition-colors duration-150`}
+                  style={{ width: titleWidth }}
+                >
+                  {creation.name}
+                </a>
+              </h3>
             </motion.article>
           );
         })}
