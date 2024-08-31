@@ -1,6 +1,7 @@
 "use client";
 
 import { closeIcon, logo, navLinks } from "../data";
+import NavLinkItem from "./NavLinkItem";
 
 export default function MobileMenu({ toggleMenu }: { toggleMenu: () => void }) {
   return (
@@ -15,9 +16,7 @@ export default function MobileMenu({ toggleMenu }: { toggleMenu: () => void }) {
         <ul className="text-white uppercase text-2xl font-light font-josefin mt-32 flex flex-col gap-4">
           {navLinks.map((nL) => {
             return (
-              <li key={`h_${nL}`}>
-                <a>{nL}</a>
-              </li>
+             <NavLinkItem link={nL}key={`h_${nL}`} />
             );
           })}
         </ul>

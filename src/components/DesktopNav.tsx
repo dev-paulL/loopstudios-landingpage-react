@@ -1,4 +1,5 @@
 import { navLinks } from "../data";
+import NavLinkItem from "./NavLinkItem";
 
 export default function DesktopNav() {
   return (
@@ -6,9 +7,7 @@ export default function DesktopNav() {
       <ul className="flex gap-6 font-bold text-white items-center justify-center">
         {navLinks.map((link) => {
           return (
-            <li key={`dh_${link}`}>
-              <a href="#">{link}</a>
-            </li>
+           <NavLinkItem key={`dh_${link}`} link={link} />
           );
         })}
       </ul>

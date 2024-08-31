@@ -46,7 +46,7 @@ img {
   display: none;
 }
 /* Above 1024px */
-@media (min-width: 1024px) {
+@media (min-width: 1020px) {
   .desktop-nav {
     display: block;
   }
@@ -57,8 +57,42 @@ img {
   .mobile-seeAllBtn {
     display: none;
   }
-  
+
   .desktop-seeAllBtn {
     display: block;
   }
+
+  .hero {
+    background-image: url(./assets/images/desktop/image-hero.jpg);
+  }
 }
+/* styles.css or similar */
+.vignette-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.vignette-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Ensure vignette is above the image but below the text */
+  transition: all 0.15s ease;
+}
+
+.vignette-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0; /* Ensure image is below the vignette */
+}
+
+.vignette-wrapper:hover::before {
+  background: rgba(255, 255, 255, 0.7);
+}
+
