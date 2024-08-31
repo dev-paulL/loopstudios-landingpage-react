@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  background-image: url(./assets/images/mobile/image-hero.jpg);
+}
+
+.heroText span {
+  @apply block;
+}
+
+h1,
+h2 {
+  @apply font-josefin font-light uppercase text-4xl;
+}
+
+p {
+  @apply font-alata text-sm font-normal;
+}
