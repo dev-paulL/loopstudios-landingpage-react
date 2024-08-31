@@ -15,10 +15,6 @@
   background-image: url(./assets/images/mobile/image-hero.jpg);
 }
 
-.heroText span {
-  @apply block;
-}
-
 h1,
 h2 {
   @apply font-josefin font-light uppercase text-4xl;
@@ -26,4 +22,43 @@ h2 {
 
 p {
   @apply font-alata text-sm font-normal;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+}
+
+.desktop-nav {
+  display: none;
+}
+.mobile-hamburger {
+  display: block;
+}
+
+.mobile-seeAllBtn {
+  display: block;
+}
+
+.desktop-seeAllBtn {
+  display: none;
+}
+/* Above 1024px */
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: block;
+  }
+  .mobile-hamburger {
+    display: none;
+  }
+
+  .mobile-seeAllBtn {
+    display: none;
+  }
+  
+  .desktop-seeAllBtn {
+    display: block;
+  }
 }

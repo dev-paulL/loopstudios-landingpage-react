@@ -2,12 +2,12 @@
 
 import { closeIcon, logo, navLinks } from "../data";
 
-export default function MobileMenu({ openMenu }: { openMenu: () => void }) {
+export default function MobileMenu({ toggleMenu }: { toggleMenu: () => void }) {
   return (
     <div className="absolute bg-black inset-0 min-h-screen p-8">
       <div className="flex justify-between">
         <img src={logo} alt="" className="w-36" />
-        <button aria-label="Close Mobile Menu" onClick={openMenu}>
+        <button aria-label="Close Mobile Menu" onClick={toggleMenu}>
           <img src={closeIcon} alt="" />
         </button>
       </div>
